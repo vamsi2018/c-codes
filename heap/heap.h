@@ -9,4 +9,8 @@ struct heap{
 	int type;
 };
 struct heap* createHeap(int size);
-struct heap* insertHeap(int number);
+struct heap* percolateUp(struct heap* hp, int index);
+struct heap* insertHeap(struct heap* hp,int number);
+void swap(struct heap* hp, int i, int j);
+struct heap* deleteFromHeap(struct heap* hp, int index);
+struct heap* percolateDown(struct heap* hp, int index);

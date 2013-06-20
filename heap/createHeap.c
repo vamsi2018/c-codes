@@ -7,6 +7,8 @@ struct heap* createHeap(int size){
 		return hp;
 	}
 	hp->size = size;
+	hp->count=0;
+	hp->type = MAXHEAP;
 	hp->array = malloc(size*sizeof(int));
 	return hp;
 }
