@@ -8,3 +8,5 @@ struct heap{
 	int count;
 	int type;
 };
+struct heap* createHeap(int size);
+struct heap* insertHeap(int number);
