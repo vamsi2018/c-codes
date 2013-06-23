@@ -1,5 +1,14 @@
 #include "heap.h"
+void printHeap(struct heap* hp){
 
+	printf("\n Displaying heap array \n");
+	int i=0;
+	while(i<hp->count){
+		printf("%d -> %d \n",i,hp->array[i]);
+		i++;
+	}
+
+}
 int main(){
 
 	int arraySize;
@@ -14,24 +23,17 @@ int main(){
 		printf("\nplease enter number to insert into the heap [enter -1 to exit] : ");
 		scanf("%d",&exit);
 	}
+	printHeap(hp);
 
-	printf("\n Displaying heap array \n");
-	int i=0;
-	while(i<hp->count){
-		printf("%d -> %d \n",i,hp->array[i]);
-		i++;
-	}
-
-	printf("Give the index number to remove from heap : ");
+	printf("Give the index number to remove from heap [enter -1 to exit]: ");
 	scanf("%d",&exit);
-	hp = deleteFromHeap(hp,exit);
 
-
-	printf("\n Displaying heap array \n");
-	i=0;
-	while(i<hp->count){
-		printf("%d -> %d \n",i,hp->array[i]);
-		i++;
+	while(exit != -1){
+		hp = deleteFromHeap(hp,exit);
+		printHeap(hp);
+		printf("\nGive the index number to remove from heap [enter -1 to exit] : ");
+		scanf("%d",&exit);
 	}
+
 	return 0;
 }
