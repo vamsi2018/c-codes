@@ -25,7 +25,7 @@ int main(){
 			}
 		}
 	}
-
+	
 	printf("\nBubble sort performed\n");
 	printf("Displaying sorted array\n");
 
