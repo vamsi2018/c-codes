@@ -16,7 +16,7 @@ int main(){
 	for(i=0;i<N;i++)
 		scanf("%d",&arr[i]);
 /*
-	lis[i] = maximum linear subsequence from lis[0] ... lis[i]
+	lis[i] = longest increasing subsequence from lis[0] ... lis[i]
 	lis[i] = 1+max(lis[j]) where j<i and arr[j]<=arr[i] else lis[i]=1
 */
 	for(i=0;i<N;i++){
