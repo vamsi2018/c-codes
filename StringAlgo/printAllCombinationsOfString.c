@@ -1,23 +1,20 @@
 #include<stdio.h>
 #include<string.h>
-void printAllCombinationsOfString(char *string,int base,int depth,char *combi){
-	int length = strlen(string);
+void printAllCombinationsOfString(char *string,char *combi,int base, int depth){
+	int length=strlen(string),i=0;
 	if(base>=length)
 		return;
-	int i=0,j=0;
-	for(j=base;j<length;j++){
-		combi[depth] = string[j];
-		combi[depth + 1] = '\0';
+	for(i=base;i<length;i++){
+		combi[depth] = string[i];
+		combi[depth+1]='\0';
 		printf("%s\n",combi);
-		printAllCombinationsOfString(string,j+1,depth+1,combi);	
+		printAllCombinationsOfString(string,combi,i+1,depth+1);
 	}
-	
 	return;
 }
 
 int main(){
-	char str[10]="ABC";
-	char combi[10];
-	printAllCombinationsOfString(str,0,0,combi);
+	char str[]="ABC",combi[10];
+	printAllCombinationsOfString(str,combi,0,0);
 
 }
