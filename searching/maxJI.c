@@ -1,19 +1,19 @@
 /*
-*	Given an array A[], find the maximum j-i such that A[j] > A[i]. For
-*	example, Input:{34,8,10,3,2,80,30,33,1} and Output:6 (j=7, i=1)
-*/
+ *	Given an array A[], find the maximum j-i such that A[j] > A[i]. For
+ *	example, Input:{34,8,10,3,2,80,30,33,1} and Output:6 (j=7, i=1)
+ */
 #include<stdio.h>
 struct JI{
-int i,j;
+	int i,j;
 };
 /*
-*	Time Complexity = O(nlogn)
-*	T(n) = 2T(n/2) + O(n);
-*	Space Complexity = Recursive function stack;
-*/
+ *	Time Complexity = O(nlogn)
+ *	T(n) = 2T(n/2) + O(n);
+ *	Space Complexity = Recursive function stack;
+ */
 struct JI maxJI(int *array,int i,int j){
-struct JI ji;
-int k=0;
+	struct JI ji;
+	int k=0;
 	if(i>=j){
 		ji.i=i;
 		ji.j=j;
